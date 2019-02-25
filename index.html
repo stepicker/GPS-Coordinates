@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your GPS Location: Latitude & Longitude on Google Maps in Full Screen</title>
+    <meta name="description" content="Find your GPS Coordinates right now, or the GPS coordinates of any address. Powered by Google Maps and beautifully rendered in full screen!">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <!-- Linking CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/style.css">
+</head>
+<body>
+    <div>
+        <input id="pac-input" class="controls" type="text" placeholder="Enter a location ...">
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+        <span id="place-name"  class="title"></span><br>
+        <strong>Place ID</strong>: <span id="place-id"></span><br>
+        <span id="place-address"></span>
+    </div>
+    <!-- Linking scripts -->
+    <script type="text/javascript" src="./assets/app.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7JWcz5_rlKgke9fLyhFhje6d1Iy9Fw2U&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>
