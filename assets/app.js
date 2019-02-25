@@ -34,7 +34,7 @@ var convertToDMS = function(lat, lng) {
         lngEW = 'W ';
     }
     
-    valueDMS = "Your Latitude: " + latNS + calculateDMS(lat) + "  |  Your Longitude: " + lngEW + calculateDMS(lng);
+    valueDMS = "Latitude: " + latNS + calculateDMS(lat) + "  |  Longitude: " + lngEW + calculateDMS(lng);
     console.log(valueDMS);
     return valueDMS;
 
