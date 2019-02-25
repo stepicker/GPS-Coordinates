@@ -25,7 +25,7 @@ html, body {
     text-overflow: ellipsis;
     width: 400px;
     position: fixed;
-    top: 0px;
+    top: 0;
     left: 200px;
     z-index: 99;
 }
@@ -36,7 +36,6 @@ html, body {
 
 #pac-input::placeholder {
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .title {
@@ -49,4 +48,14 @@ html, body {
 
 #map #infowindow-content {
     display: inline;
+}
+
+@media screen and (max-width: 700px) {
+
+    .controls {
+        width: 193px;
+        top: 50px;
+        left: -7px;
+    }
+
 }
