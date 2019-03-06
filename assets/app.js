@@ -48,6 +48,8 @@ function initMap() {
     // Initialize map with view on the Eastern U.S.
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 35.7309, lng: -77.9872},
+        streetViewControl: false,
+        fullscreenControl: false,
         zoom: 5
     });
 
