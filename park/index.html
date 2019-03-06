@@ -21,7 +21,8 @@
 
     <script>
 
-      function initMap() {
+    function initMap() {
+
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           center: {lat: 39.946143, lng: -75.157941},
@@ -30,15 +31,17 @@
           fullscreenControl: false,
           mapTypeControl: false,
           styles: [{
-           featureType: "poi",
-           elementType: "labels",
-           stylers: [{ visibility: "off" }]
+           featureType: 'poi',
+           elementType: 'labels',
+           stylers: [{ visibility: 'off' }]
           }]
         });
 
         var blockOne, blockTwo, blockThree, blockFour;
 
         var blockNames = [blockOne, blockTwo, blockThree, blockFour];
+
+        var blockIds = [1, 2, 3, 4];
 
         var blockAvailability = [false, true, false, true];
 
@@ -62,22 +65,31 @@
         ];
 
         for (var i = 0; i < blockNames.length; i++) {
+
             blockNames[i] = new google.maps.Polyline({
                 path: blockCoordinates[i],
                 strokeColor: '#FF0000',
                 strokeOpacity: 1.0,
-                strokeWeight: 5
+                strokeWeight: 10
             });
 
             if (blockAvailability[i] === true) {
                 blockNames[i].strokeColor = '#7CFC00'
-            }
+            };
 
             blockNames[i].setMap(map);
+
+            google.maps.event.addListener(blockNames[i], 'click', function() {
+                console.log(this.Ae.bounds.$, this.Ae.bounds.V);
+                alert('Hi! You just clicked on the block whose corners have latitudes ' + this.Ae.bounds.$ + ' and ' + this.Ae.bounds.V);
+            });
+
         }
 
-      }
+    }
+
     </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7JWcz5_rlKgke9fLyhFhje6d1Iy9Fw2U&callback=initMap">
     </script>
