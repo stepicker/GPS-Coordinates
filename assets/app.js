@@ -50,6 +50,11 @@ function initMap() {
         center: {lat: 35.7309, lng: -77.9872},
         streetViewControl: false,
         fullscreenControl: false,
+        styles: [{
+            featureType: 'poi',
+            elementType: 'labels',
+            stylers: [{ visibility: 'off' }]
+        }],
         zoom: 5
     });
 
