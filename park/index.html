@@ -44,7 +44,7 @@
         background-color: #FF0000;
       }
       .green-button {
-        background-color: #7CFC00;
+        background-color: #33cc33;
       }
     </style>
 
@@ -115,7 +115,7 @@
         });
 
         if (blockAvailability[i] === true) {
-            blockNames[i].strokeColor = '#7CFC00'
+            blockNames[i].strokeColor = '#33cc33'
         };
 
         blockNames[i].setMap(map);
@@ -123,7 +123,7 @@
         google.maps.event.addListener(blockNames[i], 'click', function() {
             console.log(this.Ae.bounds.$, this.Ae.bounds.V);
             $("#modal").show();
-            $("#modal").append("<button class='green-button' data-lat1='" + this.Ae.bounds.$ + "'>There are spots available! :) </button><button class='red-button' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
+            $("#modal").append("<p>Update the status of this block:</p><button class='green-button' data-lat1='" + this.Ae.bounds.$ + "'>There are spots available! :) </button><button class='red-button' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
             console.log('Hi! You just clicked on the block that starts at latitude ' + this.Ae.bounds.$ + ' and ends at latitude ' + this.Ae.bounds.V);
         });
 
