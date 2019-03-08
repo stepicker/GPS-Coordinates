@@ -119,12 +119,14 @@
 
     $(document).on("click", ".green-button", function () {
       $("#modal").hide();
+      $("#modal").html("");
       var selectedBlock = $(this).data("lat1");
       console.log(selectedBlock);
     });
 
     $(document).on("click", ".red-button", function () {
       $("#modal").hide();
+      $("#modal").html("");
       var selectedBlock = $(this).data("lat1");
       console.log(selectedBlock);
     });
