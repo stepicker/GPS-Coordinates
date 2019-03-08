@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Permit Parking</title>
@@ -19,14 +21,15 @@
       }
       #modal {
         position: fixed;
-        width: 320px;
-        height: 240px;
+        width: 200px;
+        height: 200px;
         top: 50%;
         left: 50%;
-        margin-top: -120px;
-        margin-left: -160px;
+        margin-top: -100px;
+        margin-left: -100px;
         background-color: white;
-        text-align: center;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, -1px -1px 9px 0px rgba(107,107,107,0); 
+        box-shadow: 0px 10px 13px -7px #000000, -1px -1px 9px 0px rgba(107,107,107,0);
         z-index: 100;
       }
     </style>
@@ -42,6 +45,10 @@
     <script>
 
     $("#modal").hide();
+
+    // $.get("/api", function(blocks) {
+    //   console.log(blocks);
+    // });
 
     function initMap() {
 
@@ -102,13 +109,25 @@
         google.maps.event.addListener(blockNames[i], 'click', function() {
             console.log(this.Ae.bounds.$, this.Ae.bounds.V);
             $("#modal").show();
-            $("#modal").append("<button class='green' data-lat1='" + this.Ae.bounds.$ + "'>There are spots available! :) </button><button class='green' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
+            $("#modal").append("<button class='green-button' data-lat1='" + this.Ae.bounds.$ + "'>There are spots available! :) </button><button class='red-button' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
             console.log('Hi! You just clicked on the block that starts at latitude ' + this.Ae.bounds.$ + ' and ends at latitude ' + this.Ae.bounds.V);
         });
 
       }
 
     }
+
+    $(document).on("click", ".green-button", function () {
+      $("#modal").hide();
+      var selectedBlock = $(this).data("lat1");
+      console.log(selectedBlock);
+    });
+
+    $(document).on("click", ".red-button", function () {
+      $("#modal").hide();
+      var selectedBlock = $(this).data("lat1");
+      console.log(selectedBlock);
+    });
 
     </script>
 
