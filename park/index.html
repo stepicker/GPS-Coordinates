@@ -18,6 +18,8 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10pt;
       }
       #modal {
         position: fixed;
@@ -32,11 +34,14 @@
         box-shadow: 0px 10px 13px -7px #000000, -1px -1px 9px 0px rgba(107,107,107,0);
         z-index: 100;
       }
+      p {
+        margin: 10px;
+      }
       button {
         margin: 10px;
         padding: 5px 10px;
         color: white;
-        font-size: 12pt;
+        font-size: 10pt;
         border: 1px solid lightgray;
         border-radius: 5px;
       }
@@ -123,7 +128,7 @@
         google.maps.event.addListener(blockNames[i], 'click', function() {
             console.log(this.Ae.bounds.$, this.Ae.bounds.V);
             $("#modal").show();
-            $("#modal").append("<p>Update the status of this block:</p><button class='green-button' data-lat1='" + this.Ae.bounds.$ + "'>There are spots available! :) </button><button class='red-button' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
+            $("#modal").append("<p>Update the status:</p><button class='green-button' data-lat1='" + this.Ae.bounds.$ + "'>Spots available! :) </button><button class='red-button' data-lat1='" + this.Ae.bounds.$ + "'>No spots available :( </button>");
             console.log('Hi! You just clicked on the block that starts at latitude ' + this.Ae.bounds.$ + ' and ends at latitude ' + this.Ae.bounds.V);
         });
 
